@@ -2,82 +2,170 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Found & Proof</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Found & Proof | Главная</title>
+    <link rel="shortcut icon" href="logo.png" type="image/jpeg">
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- Верхняя панель -->
-    <div class="top-bar">
-        <span>Бесплатная доставка от 3000₽</span>
-        <span>Проверка подлинности</span>
-        <span>Возврат 14 дней</span>
-    </div>
-
-    <!-- Шапка -->
     <header class="header">
-        <div class="logo">
-            <img src="logo.png" alt="logo">
-            <div>
-                <h2>Found & Proof</h2>
-                <p>wear with confidence</p>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="logo.png" alt="Found & Proof" class="logo-img">
             </div>
+            <nav class="nav">
+                <a href="#new" class="nav-link">Новинки</a>
+                <a href="#brands" class="nav-link">Бренды</a>
+                <a href="#coop" class="nav-link">Сотрудничество</a>
+                <a href="#catalog" class="nav-link">Каталог</a>
+                <a href="#" onclick="openCart()" class="nav-link">🛒 Корзина</a>
+            </nav>
         </div>
-
-        <nav>
-            <a href="#">Мужчинам</a>
-            <a href="#">Женщинам</a>
-            <a href="#">Новинки</a>
-            <a href="#">Бренды</a>
-        </nav>
     </header>
 
-    <!-- Главный блок -->
     <section class="hero">
-        <div class="hero-text">
-            <h1>Found <span>& Proof</span></h1>
-            <p>Одежда, которой можно доверять</p>
-            <p class="sub">
-                Новая и б/у одежда с гарантией подлинности
-            </p>
-
-            <div class="buttons">
-                <button class="btn-main">Смотреть каталог</button>
-                <button class="btn-secondary">Как работает проверка?</button>
-            </div>
-        </div>
-
-        <div class="hero-logo">
-            <img src="logo.png">
+        <div class="hero-bg" style="background-image: url('img/showroom.jpg');"></div>
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <h1>Found & Proof</h1>
+            <p>Эксклюзивная одежда и редкие находки из лучших коллекций</p>
+            <a href="#catalog" class="btn">Перейти к каталогу</a>
         </div>
     </section>
 
-    <!-- Каталог -->
-    <section class="catalog">
-        <h2>Популярные товары</h2>
+    <section id="catalog" class="catalog">
+        <div class="container">
+            <h2>Каталог товаров</h2>
+            <div class="cards">
+                <div class="card">
+                    <div class="card-img-wrap">
+                        <div class="slider-wrapper">
+                            <img src="img/AdidasOriginalsJQDTTTRACKTOP/imeg1.webp" class="active">
+                            <img src="img/AdidasOriginalsJQDTTTRACKTOP/imeg2.webp">
+                        </div>
+                        <button class="slider-btn prev-btn">&lt;</button>
+                        <button class="slider-btn next-btn">&gt;</button>
+                    </div>
+                    <h3>Adidas Originals JQD TT</h3>
+                    <p class="price">7 500₽</p>
+                    <button class="btn" onclick="addToCart('Adidas Originals JQD', 7500)">В корзину</button>
+                </div>
 
-        <div class="cards">
+                <div class="card">
+                    <div class="card-img-wrap">
+                        <div class="slider-wrapper">
+                            <img src="img/AdidasOriginalsNewYearJacketForWomen/imeg1.webp" class="active">
+                            <img src="img/AdidasOriginalsNewYearJacketForWomen/imeg2.webp">
+                        </div>
+                        <button class="slider-btn prev-btn">&lt;</button>
+                        <button class="slider-btn next-btn">&gt;</button>
+                    </div>
+                    <h3>Adidas New Year Jacket</h3>
+                    <p class="price">11 900₽</p>
+                    <button class="btn" onclick="addToCart('Adidas New Year', 11900)">В корзину</button>
+                </div>
 
-            <div class="card">
-                <img src="photo.png">
-                <h3>Худи</h3>
-                <p>4500₽</p>
+                <div class="card">
+                    <div class="card-img-wrap">
+                        <div class="slider-wrapper">
+                            <img src="img/DONIZETTICoralCoffeeWomen/imeg1.webp" class="active">
+                        </div>
+                        <button class="slider-btn prev-btn">&lt;</button>
+                        <button class="slider-btn next-btn">&gt;</button>
+                    </div>
+                    <h3>DONIZETTI Coral Coffee</h3>
+                    <p class="price">8 500₽</p>
+                    <button class="btn" onclick="addToCart('DONIZETTI Coral', 8500)">В корзину</button>
+                </div>
+
+                <div class="card">
+                    <div class="card-img-wrap">
+                        <div class="slider-wrapper">
+                            <img src="img/MM6MaisonMargielasviter/imeg1.webp" class="active">
+                        </div>
+                        <button class="slider-btn prev-btn">&lt;</button>
+                        <button class="slider-btn next-btn">&gt;</button>
+                    </div>
+                    <h3>MM6 Margiela Sweater</h3>
+                    <p class="price">24 000₽</p>
+                    <button class="btn" onclick="addToCart('MM6 Margiela', 24000)">В корзину</button>
+                </div>
+
+                <div class="card">
+                    <div class="card-img-wrap">
+                        <div class="slider-wrapper">
+                            <img src="img/NikeAirMaxMoto2K/imeg1.webp" class="active">
+                            <img src="img/NikeAirMaxMoto2K/imeg2.webp">
+                        </div>
+                        <button class="slider-btn prev-btn">&lt;</button>
+                        <button class="slider-btn next-btn">&gt;</button>
+                    </div>
+                    <h3>Nike Air Max Moto 2K</h3>
+                    <p class="price">14 500₽</p>
+                    <button class="btn" onclick="addToCart('Nike Air Max', 14500)">В корзину</button>
+                </div>
+
+                <div class="card">
+                    <div class="card-img-wrap">
+                        <div class="slider-wrapper">
+                            <img src="img/VANSgreenjacket/imeg1.webp" class="active">
+                            <img src="img/VANSgreenjacket/imeg2.webp">
+                        </div>
+                        <button class="slider-btn prev-btn">&lt;</button>
+                        <button class="slider-btn next-btn">&gt;</button>
+                    </div>
+                    <h3>VANS Green Jacket</h3>
+                    <p class="price">9 200₽</p>
+                    <button class="btn" onclick="addToCart('VANS Jacket', 9200)">В корзину</button>
+                </div>
+
+                <div class="card">
+                    <div class="card-img-wrap">
+                        <div class="slider-wrapper">
+                            <img src="img/VivienneWestwoodjeansjacket/item1.webp" class="active">
+                        </div>
+                        <button class="slider-btn prev-btn">&lt;</button>
+                        <button class="slider-btn next-btn">&gt;</button>
+                    </div>
+                    <h3>Vivienne Westwood Jacket</h3>
+                    <p class="price">32 000₽</p>
+                    <button class="btn" onclick="addToCart('Vivienne Westwood', 32000)">В корзину</button>
+                </div>
+
             </div>
-
-            <div class="card">
-                <img src="photo.png">
-                <h3>Куртка</h3>
-                <p>8900₽</p>
-            </div>
-
-            <div class="card">
-                <img src="photo.png">
-                <h3>Кроссовки</h3>
-                <p>12000₽</p>
-            </div>
-
         </div>
     </section>
 
+    <div id="cart-modal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <span class="close-btn" onclick="document.getElementById('cart-modal').style.display='none'">&times;</span>
+            <h2>Ваша корзина</h2>
+            <div id="cart-items"></div>
+            <div class="cart-total">Итого: <span id="total-price">0</span>₽</div>
+            <button class="btn" onclick="checkout()">Оплатить</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('.card').forEach(card => {
+        const images = card.querySelectorAll('.slider-wrapper img');
+        const prevBtn = card.querySelector('.prev-btn');
+        const nextBtn = card.querySelector('.next-btn');
+        if (images.length <= 1) return;
+        let currentIndex = 0;
+        function showImage(index) {
+        images[currentIndex].classList.remove('active');
+        currentIndex = (index + images.length) % images.length;
+        images[currentIndex].classList.add('active');
+        }
+        prevBtn.addEventListener('click', (e) => { e.preventDefault(); showImage(currentIndex - 1); });
+        nextBtn.addEventListener('click', (e) => { e.preventDefault(); showImage(currentIndex + 1); });
+        });
+        });
+    </script>
 </body>
 </html>
