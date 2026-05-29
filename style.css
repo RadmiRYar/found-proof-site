@@ -1,3 +1,4 @@
+/* Общие сбросы стилей */
 * {
     margin: 0;
     padding: 0;
@@ -18,6 +19,7 @@ body {
     padding: 0 20px;
 }
 
+/* Шапка сайта */
 .header {
     background-color: rgba(26, 25, 29, 0.85);
     backdrop-filter: blur(10px);
@@ -70,6 +72,7 @@ body {
     transform: scale(1.1);
 }
 
+/* Начальное окошко (Hero-секция) */
 .hero {
     position: relative;
     height: 75vh;
@@ -143,12 +146,13 @@ body {
         box-shadow: 0 6px 20px rgba(190, 142, 252, 0.4);
     }
 
+/* Декоративная промежуточная секция с вешалками (hangers) */
 .divider-section {
     position: relative;
     padding: 100px 0;
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
+    background-attachment: fixed; /* Эффект параллакса при скролле */
     text-align: center;
 }
 
@@ -176,6 +180,7 @@ body {
         line-height: 1.6;
     }
 
+/* Секция каталога */
 .catalog {
     padding: 100px 0;
 }
@@ -198,14 +203,17 @@ body {
             border-radius: 2px;
         }
 
+/* Сетка карточек */
 .cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
 }
 
+/* Стили карточки товара */
 .cards {
     display: grid;
+    /* Это значит: минимум 300px ширины, максимум — сколько влезет */
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 30px;
     padding: 20px;
@@ -218,14 +226,15 @@ body {
     padding: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-between; /* Кнопка всегда будет прижата к низу */
     transition: transform 0.3s ease;
 }
 
     .card .btn {
         margin-top: 15px;
-        width: 100%;
+        width: 100%; /* Кнопка растянется на всю ширину карточки */
     }
+/* Контейнер картинок и слайдера */
 .card-img-wrap {
     position: relative;
     width: 100%;
@@ -239,12 +248,13 @@ body {
     justify-content: center;
 }
 .card-img-wrap {
-    height: 250px;
+    height: 250px; /* Зафиксируй высоту блока для картинок */
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
 }
+/* Слайдер картинок */
 .slider-wrapper {
     position: relative;
     width: 100%;
@@ -270,6 +280,7 @@ body {
             pointer-events: auto;
         }
 
+/* Кнопки-стрелочки слайдера */
 .slider-btn {
     position: absolute;
     top: 50%;
@@ -313,6 +324,7 @@ body {
     transform: translateY(-50%) scale(0.9);
 }
 
+/* Иконки верификации */
 .card-verify-badge {
     position: absolute;
     top: 12px;
@@ -323,6 +335,7 @@ body {
     z-index: 6;
 }
 
+/* Текст внутри карточки */
 .card h3 {
     font-size: 15px;
     font-weight: 500;
@@ -340,6 +353,7 @@ body {
     margin-top: auto;
 }
 
+/* Адаптивность */
 @media (max-width: 992px) {
     .cards {
         grid-template-columns: repeat(2, 1fr);
@@ -352,6 +366,7 @@ body {
     .divider-section {
         background-attachment: scroll;
     }
+    /* Выключение параллакса на планшетах */
 }
 
 @media (max-width: 600px) {
@@ -371,3 +386,171 @@ body {
         height: 240px;
     }
 }
+/* --- Стили для новых секций --- */
+
+/* Форма профиля */
+.profile-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background: #232227;
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 600px;
+    margin: 0 auto;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+    .profile-form label {
+        color: #a499ca;
+        font-weight: 500;
+        font-size: 14px;
+    }
+
+    .profile-form input {
+        padding: 14px;
+        border-radius: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: #1a191d;
+        color: #ffffff;
+        font-family: 'Montserrat', sans-serif;
+        outline: none;
+        transition: border-color 0.3s ease;
+    }
+
+        .profile-form input:focus {
+            border-color: #a499ca;
+        }
+
+/* Блок сотрудничества */
+.coop-wrap {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #232227;
+    padding: 50px 30px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+    .coop-wrap p {
+        font-size: 16px;
+        color: #e1e0e4;
+        margin-bottom: 30px;
+        line-height: 1.6;
+    }
+
+.coop-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Стили для страницы корзины */
+.cart-items-container {
+    background: #232227;
+    padding: 20px 30px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.cart-item-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 16px;
+    font-weight: 500;
+}
+
+    .cart-item-row:last-child {
+        border-bottom: none;
+    }
+
+.remove-btn {
+    background: rgba(255, 77, 77, 0.1);
+    border: none;
+    color: #ff4d4d;
+    cursor: pointer;
+    font-size: 14px;
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    transition: background 0.2s ease;
+}
+
+    .remove-btn:hover {
+        background: rgba(255, 77, 77, 0.2);
+    }
+/* ================= ИНДИКАТОРЫ КОРЗИНЫ ================= */
+
+/* Круглый счетчик в шапке */
+.cart-badge {
+    background-color: #a499ca;
+    color: #1a191d;
+    padding: 2px 7px;
+    border-radius: 50%;
+    font-size: 12px;
+    font-weight: 700;
+    margin-left: 5px;
+    display: inline-block;
+    transition: transform 0.2s ease;
+}
+
+    /* Эффект "прыжка" счетчика при добавлении товара */
+    .cart-badge.bump {
+        transform: scale(1.4);
+    }
+
+/* Строка товара внутри модального окна */
+.cart-item-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 14px;
+}
+
+/* Кнопка удаления товара */
+.remove-btn {
+    background: none;
+    border: none;
+    color: #ff6b6b;
+    cursor: pointer;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+    transition: opacity 0.2s;
+}
+
+    .remove-btn:hover {
+        opacity: 0.7;
+        text-decoration: underline;
+    }
+
+/* Красивое всплывающее уведомление (Toast) */
+.toast-notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #232227;
+    color: #fff;
+    border-left: 4px solid #a499ca;
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+    z-index: 1000;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease;
+}
+
+    .toast-notification.show {
+        transform: translateY(0);
+        opacity: 1;
+    }

@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Корзина | Found & Proof</title>
+    <link rel="shortcut icon" href="logo.png" type="image/jpeg">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body style="padding-top: 80px;">
+
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="logo.png" alt="Found & Proof" class="logo-img">
+                </a>
+            </div>
+            <nav class="nav">
+                <a href="index.html#new" class="nav-link">Новинки</a>
+                <a href="index.html#coop" class="nav-link">Сотрудничество</a>
+                <a href="index.html#catalog" class="nav-link">Каталог</a>
+                <a href="index.html#profile" class="nav-link">Профиль</a>
+                <a href="cart.html" class="nav-link" style="color: #a499ca;">🛒 Корзина</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="catalog">
+        <div class="container" style="margin-top: 120px; max-width: 600px;">
+            <h2>Ваша корзина</h2>
+
+            <div id="cart-items"></div>
+
+            <div class="cart-total" style="margin-top: 20px; font-size: 18px; text-align: right;">
+                Итого: <span id="total-price">0</span>₽
+            </div>
+
+            <button class="btn" onclick="checkout()" style="width: 100%; margin-top: 20px;">Оплатить</button>
+        </div>
+
+        <script src="script.js"></script>
+</body>
+</html>

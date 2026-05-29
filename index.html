@@ -17,10 +17,11 @@
             </div>
             <nav class="nav">
                 <a href="#new" class="nav-link">Новинки</a>
-                <a href="#brands" class="nav-link">Бренды</a>
                 <a href="#coop" class="nav-link">Сотрудничество</a>
                 <a href="#catalog" class="nav-link">Каталог</a>
-                <a href="#" onclick="openCart()" class="nav-link">🛒 Корзина</a>
+                <a href="#profile" class="nav-link">Профиль</a>
+                <a href="cart.html" class="nav-link">🛒 Корзина</a>
+                <a href="cart.html" class="nav-link">🛒 Корзина <span id="cart-badge" class="cart-badge">0</span></a>
             </nav>
         </div>
     </header>
@@ -35,10 +36,47 @@
         </div>
     </section>
 
+
+    <section id="new" style="position: relative; width: 100%; height: 75vh; overflow: hidden; background-color: #1a191d; margin-top: 30vh; margin-bottom: 80px;">
+        <div style="
+            width: 100%;
+            height: 100%;
+            background-image: url('collecthionGUCCI.png');
+            background-size: cover;
+            background-position: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        "></div>
+
+        <div style="
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            box-shadow: inset 0 0 100px 50px #1a191d;
+            background: linear-gradient(to top, rgba(26, 25, 29, 0.95) 0%, rgba(26, 25, 29, 0) 35%),
+                        linear-gradient(to bottom, rgba(26, 25, 29, 0.6) 0%, rgba(26, 25, 29, 0) 20%);
+        "></div>
+
+        <div class="container" style="position: relative; height: 100%; z-index: 3; display: flex; align-items: flex-end; padding-bottom: 50px;">
+            <div style="max-width: 800px; text-align: left;">
+                <span style="color: #a499ca; text-transform: uppercase; font-size: 12px; font-weight: 700; letter-spacing: 3px; display: inline-block; margin-bottom: 10px;">Эксклюзивный дроп</span>
+                <h2 style="color: #ffffff; font-size: 38px; font-weight: 700; line-height: 1.3; text-transform: uppercase; letter-spacing: 1px; margin: 0;">
+                    Долгожданная collection <br><span style="color: #fff; text-shadow: 0 0 15px rgba(164,153,202,0.6);">Gucci the Year of the Rabbit</span>
+                </h2>
+            </div>
+        </div>
+    </section>
+
     <section id="catalog" class="catalog">
         <div class="container">
             <h2>Каталог товаров</h2>
             <div class="cards">
+
                 <div class="card">
                     <div class="card-img-wrap">
                         <div class="slider-wrapper">
@@ -90,7 +128,7 @@
                     </div>
                     <h3>MM6 Margiela Sweater</h3>
                     <p class="price">24 000₽</p>
-                    <button class="btn" onclick="addToCart('MM6 Margiela', 24000)">В корзину</button>
+                    <button class="btn" onclick="onclick=" addToCart('MM6 Margiela', 24000)">В корзину</button>
                 </div>
 
                 <div class="card">
@@ -134,38 +172,217 @@
                     <button class="btn" onclick="addToCart('Vivienne Westwood', 32000)">В корзину</button>
                 </div>
 
+                <div class="card">
+                    <div class="card-img-wrap">
+                        <div class="slider-wrapper">
+                            <img src="img/Gucci women's jacket, dark blue/imeg1.jpg" class="active">
+                        </div>
+                        <button class="slider-btn prev-btn">&lt;</button>
+                        <button class="slider-btn next-btn">&gt;</button>
+                    </div>
+                    <h3>Gucci Women's Jacket (Dark Blue)</h3>
+                    <p class="price">48 000₽</p>
+                    <button class="btn" onclick="addToCart('Gucci Dark Blue Jacket', 48000)">В корзину</button>
+                </div>
+
+                <div class="card">
+                    <div class="card-img-wrap">
+                        <div class="slider-wrapper">
+                            <img src="img/Gucci Women's Jacket, Green  Red  Black/imeg1.jpg" class="active">
+                        </div>
+                        <button class="slider-btn prev-btn">&lt;</button>
+                        <button class="slider-btn next-btn">&gt;</button>
+                    </div>
+                    <h3>Gucci Women's Jacket (Green/Red/Black)</h3>
+                    <p class="price">52 000₽</p>
+                    <button class="btn" onclick="addToCart('Gucci Colorblock Jacket', 52000)">В корзину</button>
+                </div>
+
+                <div class="card">
+                    <div class="card-img-wrap">
+                        <div class="slider-wrapper">
+                            <img src="img/Women's Adidas X Gucci Jacket/imeg1.jpg" class="active">
+                        </div>
+                        <button class="slider-btn prev-btn">&lt;</button>
+                        <button class="slider-btn next-btn">&gt;</button>
+                    </div>
+                    <h3>Women's Adidas x Gucci Jacket</h3>
+                    <p class="price">65 000₽</p>
+                    <button class="btn" onclick="addToCart('Adidas x Gucci Jacket', 65000)">В корзину</button>
+                </div>
+
+                <div class="card">
+                    <div class="card-img-wrap">
+                        <div class="slider-wrapper">
+                            <img src="img/MIU MIU Women's Jacket in Sapphire Blue/imeg1.jpg" class="active">
+                        </div>
+                        <button class="slider-btn prev-btn">&lt;</button>
+                        <button class="slider-btn next-btn">&gt;</button>
+                    </div>
+                    <h3>Miu Miu Jacket (Sapphire Blue)</h3>
+                    <p class="price">58 000₽</p>
+                    <button class="btn" onclick="addToCart('Miu Miu Sapphire Jacket', 58000)">В корзину</button>
+                </div>
+
+                <div class="card">
+                    <div class="card-img-wrap">
+                        <div class="slider-wrapper">
+                            <img src="img/Dolce & Gabbana floral midi dress/imeg1.webp" class="active">
+                        </div>
+                        <button class="slider-btn prev-btn">&lt;</button>
+                        <button class="slider-btn next-btn">&gt;</button>
+                    </div>
+                    <h3>Dolce & Gabbana Floral Midi Dress</h3>
+                    <p class="price">42 000₽</p>
+                    <button class="btn" onclick="addToCart('D&G Floral Dress', 42000)">В корзину</button>
+                </div>
+
+                <div class="card">
+                    <div class="card-img-wrap">
+                        <div class="slider-wrapper">
+                            <img src="img/Lace jacket with floral pattern and satin details by Dolce & Gabbana/imeg1.jpg" class="active">
+                        </div>
+                        <button class="slider-btn prev-btn">&lt;</button>
+                        <button class="slider-btn next-btn">&gt;</button>
+                    </div>
+                    <h3>Lace Jacket with Floral Pattern</h3>
+                    <p class="price">39 000₽</p>
+                    <button class="btn" onclick="addToCart('Lace Floral Jacket', 39000)">В корзину</button>
+                </div>
+
+                <div class="card">
+                    <div class="card-img-wrap">
+                        <div class="slider-wrapper">
+                            <img src="img/Dolce & Gabbana Single-Breasted Rachel Basketweave/imeg1.webp" class="active">
+                        </div>
+                        <button class="slider-btn prev-btn">&lt;</button>
+                        <button class="slider-btn next-btn">&gt;</button>
+                    </div>
+                    <h3>Dolce & Gabbana Single-Breasted Jacket</h3>
+                    <p class="price">72 000₽</p>
+                    <button class="btn" onclick="addToCart('D&G Single-Breasted', 72000)">В корзину</button>
+                </div>
+
+                <div class="card">
+                    <div class="card-img-wrap">
+                        <div class="slider-wrapper">
+                            <img src="img/Miu Miu Polo Women's Striped, Beige/imeg1.jpg" class="active">
+                        </div>
+                        <button class="slider-btn prev-btn">&lt;</button>
+                        <button class="slider-btn next-btn">&gt;</button>
+                    </div>
+                    <h3>Miu Miu Striped Polo (Beige)</h3>
+                    <p class="price">29 000₽</p>
+                    <button class="btn" onclick="addToCart('Miu Miu Striped Polo', 29000)">В корзину</button>
+                </div>
+
+                <div class="card">
+                    <div class="card-img-wrap">
+                        <div class="slider-wrapper">
+                            <img src="img/AMI Paris men's jacket made of Virginia wool/imeg1.jpg" class="active">
+                        </div>
+                        <button class="slider-btn prev-btn">&lt;</button>
+                        <button class="slider-btn next-btn">&gt;</button>
+                    </div>
+                    <h3>AMI Paris Men's Jacket</h3>
+                    <p class="price">46 000₽</p>
+                    <button class="btn" onclick="addToCart('AMI Paris Jacket', 46000)">В корзину</button>
+                </div>
+
+                <div class="card">
+                    <div class="card-img-wrap">
+                        <div class="slider-wrapper">
+                            <img src="img/Burberry beige trench coat with a misaligned clasp/imeg1.jpg" class="active">
+                        </div>
+                        <button class="slider-btn prev-btn">&lt;</button>
+                        <button class="slider-btn next-btn">&gt;</button>
+                    </div>
+                    <h3>Burberry Beige Trench Coat</h3>
+                    <p class="price">89 000₽</p>
+                    <button class="btn" onclick="addToCart('Burberry Trench Coat', 89000)">В корзину</button>
+                </div>
+
+                <div class="card">
+                    <div class="card-img-wrap">
+                        <div class="slider-wrapper">
+                            <img src="img/GUCCILovelightSS22CropTopWomen'sBlack/imag1.webp" class="active">
+                        </div>
+                        <button class="slider-btn prev-btn">&lt;</button>
+                        <button class="slider-btn next-btn">&gt;</button>
+                    </div>
+                    <h3>Gucci Lovelight SS22 Crop Top</h3>
+                    <p class="price">34 000₽</p>
+                    <button class="btn" onclick="addToCart('Gucci Crop Top', 34000)">В корзину</button>
+                </div>
+
+                <div class="card">
+                    <div class="card-img-wrap">
+                        <div class="slider-wrapper">
+                            <img src="img/GUCCI Green Women's Coat/imag1.webp" class="active">
+                        </div>
+                        <button class="slider-btn prev-btn">&lt;</button>
+                        <button class="slider-btn next-btn">&gt;</button>
+                    </div>
+                    <h3>Gucci Green Women's Coat</h3>
+                    <p class="price">95 000₽</p>
+                    <button class="btn" onclick="addToCart('Gucci Green Coat', 95000)">В корзину</button>
+                </div>
+
+                <div class="card">
+                    <div class="card-img-wrap">
+                        <div class="slider-wrapper">
+                            <img src="img/LOUISVUITTONHudiHanfuDressforWomen/imag1.webp" class="active">
+                        </div>
+                        <button class="slider-btn prev-btn">&lt;</button>
+                        <button class="slider-btn next-btn">&gt;</button>
+                    </div>
+                    <h3>Louis Vuitton Hudi Hanfu Dress</h3>
+                    <p class="price">115 000₽</p>
+                    <button class="btn" onclick="addToCart('LV Hanfu Dress', 115000)">В корзину</button>
+                </div>
             </div>
         </div>
     </section>
 
-    <div id="cart-modal" class="modal" style="display:none;">
-        <div class="modal-content">
-            <span class="close-btn" onclick="document.getElementById('cart-modal').style.display='none'">&times;</span>
-            <h2>Ваша корзина</h2>
-            <div id="cart-items"></div>
-            <div class="cart-total">Итого: <span id="total-price">0</span>₽</div>
-            <button class="btn" onclick="checkout()">Оплатить</button>
+    <section id="coop" class="catalog">
+        <div class="container">
+            <h2>Сотрудничество</h2>
+            <div class="coop-wrap" style="background: #232227; padding: 40px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05); text-align: center; max-width: 800px; margin: 0 auto;">
+                <p style="line-height: 1.6; margin-bottom: 25px; color: #e1e0e4; font-size: 16px;">
+                    У вас есть оригинальные архивные или брендовые вещи, которым вы хотите дать вторую жизнь? Мы всегда в поиске уникальных находок. Свяжитесь с нами, чтобы обсудить условия выкупа или реализации ваших вещей через наш магазин.
+                </p>
+                <div class="coop-buttons" style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+                    <a href="mailto:contact@foundandproof.ru" class="btn">Написать на Email</a>
+                    <a href="https://t.me/your_telegram" target="_blank" class="btn" style="background-color: #0088cc; color: #fff;">Написать в Telegram</a>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
+
+    <section id="profile" class="catalog">
+        <div class="container">
+            <h2>Личный кабинет</h2>
+            <form class="profile-form" style="display: flex; flex-direction: column; gap: 15px; background: #232227; padding: 30px; border-radius: 12px; max-width: 600px; margin: 0 auto; border: 1px solid rgba(255,255,255,0.05);">
+                <div style="display: flex; flex-direction: column; gap: 5px;">
+                    <label style="color: #a499ca; font-size: 14px; font-weight: 500; text-align: left;">ФИО</label>
+                    <input type="text" placeholder="Имя Пользователя" style="padding: 12px; background: #1a191d; border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; color: #fff; font-family: inherit; outline: none;">
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 5px;">
+                    <label style="color: #a499ca; font-size: 14px; font-weight: 500; text-align: left;">Email</label>
+                    <input type="email" placeholder="example@mail.com" style="padding: 12px; background: #1a191d; border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; color: #fff; font-family: inherit; outline: none;">
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 5px;">
+                    <label style="color: #a499ca; font-size: 14px; font-weight: 500; text-align: left;">Адрес доставки (по умолчанию)</label>
+                    <input type="text" placeholder="Город, улица, дом" style="padding: 12px; background: #1a191d; border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; color: #fff; font-family: inherit; outline: none;">
+                </div>
+
+                <button type="button" class="btn" style="margin-top: 10px; align-self: flex-start;" onclick="alert('Данные успешно сохранены!')">Сохранить изменения</button>
+            </form>
+        </div>
+    </section>
 
     <script src="script.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-        document.querySelectorAll('.card').forEach(card => {
-        const images = card.querySelectorAll('.slider-wrapper img');
-        const prevBtn = card.querySelector('.prev-btn');
-        const nextBtn = card.querySelector('.next-btn');
-        if (images.length <= 1) return;
-        let currentIndex = 0;
-        function showImage(index) {
-        images[currentIndex].classList.remove('active');
-        currentIndex = (index + images.length) % images.length;
-        images[currentIndex].classList.add('active');
-        }
-        prevBtn.addEventListener('click', (e) => { e.preventDefault(); showImage(currentIndex - 1); });
-        nextBtn.addEventListener('click', (e) => { e.preventDefault(); showImage(currentIndex + 1); });
-        });
-        });
-    </script>
 </body>
 </html>
