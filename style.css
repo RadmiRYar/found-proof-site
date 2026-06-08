@@ -1,4 +1,3 @@
-/* Общие сбросы стилей */
 * {
     margin: 0;
     padding: 0;
@@ -19,7 +18,6 @@ body {
     padding: 0 20px;
 }
 
-/* Шапка сайта */
 .header {
     background-color: rgba(26, 25, 29, 0.85);
     backdrop-filter: blur(10px);
@@ -72,7 +70,6 @@ body {
     transform: scale(1.1);
 }
 
-/* Начальное окошко (Hero-секция) */
 .hero {
     position: relative;
     height: 75vh;
@@ -146,13 +143,12 @@ body {
         box-shadow: 0 6px 20px rgba(190, 142, 252, 0.4);
     }
 
-/* Декоративная промежуточная секция с вешалками (hangers) */
 .divider-section {
     position: relative;
     padding: 100px 0;
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; /* Эффект параллакса при скролле */
+    background-attachment: fixed;
     text-align: center;
 }
 
@@ -180,7 +176,6 @@ body {
         line-height: 1.6;
     }
 
-/* Секция каталога */
 .catalog {
     padding: 100px 0;
 }
@@ -203,17 +198,14 @@ body {
             border-radius: 2px;
         }
 
-/* Сетка карточек */
 .cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
 }
 
-/* Стили карточки товара */
 .cards {
     display: grid;
-    /* Это значит: минимум 300px ширины, максимум — сколько влезет */
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 30px;
     padding: 20px;
@@ -226,15 +218,14 @@ body {
     padding: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Кнопка всегда будет прижата к низу */
+    justify-content: space-between;
     transition: transform 0.3s ease;
 }
 
     .card .btn {
         margin-top: 15px;
-        width: 100%; /* Кнопка растянется на всю ширину карточки */
+        width: 100%;
     }
-/* Контейнер картинок и слайдера */
 .card-img-wrap {
     position: relative;
     width: 100%;
@@ -248,13 +239,12 @@ body {
     justify-content: center;
 }
 .card-img-wrap {
-    height: 250px; /* Зафиксируй высоту блока для картинок */
+    height: 250px;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
 }
-/* Слайдер картинок */
 .slider-wrapper {
     position: relative;
     width: 100%;
@@ -280,7 +270,6 @@ body {
             pointer-events: auto;
         }
 
-/* Кнопки-стрелочки слайдера */
 .slider-btn {
     position: absolute;
     top: 50%;
@@ -324,7 +313,6 @@ body {
     transform: translateY(-50%) scale(0.9);
 }
 
-/* Иконки верификации */
 .card-verify-badge {
     position: absolute;
     top: 12px;
@@ -335,7 +323,6 @@ body {
     z-index: 6;
 }
 
-/* Текст внутри карточки */
 .card h3 {
     font-size: 15px;
     font-weight: 500;
@@ -353,7 +340,6 @@ body {
     margin-top: auto;
 }
 
-/* Адаптивность */
 @media (max-width: 992px) {
     .cards {
         grid-template-columns: repeat(2, 1fr);
@@ -366,7 +352,6 @@ body {
     .divider-section {
         background-attachment: scroll;
     }
-    /* Выключение параллакса на планшетах */
 }
 
 @media (max-width: 600px) {
@@ -386,9 +371,7 @@ body {
         height: 240px;
     }
 }
-/* --- Стили для новых секций --- */
 
-/* Форма профиля */
 .profile-form {
     display: flex;
     flex-direction: column;
@@ -422,7 +405,6 @@ body {
             border-color: #a499ca;
         }
 
-/* Блок сотрудничества */
 .coop-wrap {
     text-align: center;
     max-width: 800px;
@@ -447,7 +429,6 @@ body {
     flex-wrap: wrap;
 }
 
-/* Стили для страницы корзины */
 .cart-items-container {
     background: #232227;
     padding: 20px 30px;
@@ -484,9 +465,8 @@ body {
     .remove-btn:hover {
         background: rgba(255, 77, 77, 0.2);
     }
-/* ================= ИНДИКАТОРЫ КОРЗИНЫ ================= */
 
-/* Круглый счетчик в шапке */
+
 .cart-badge {
     background-color: #a499ca;
     color: #1a191d;
@@ -499,12 +479,10 @@ body {
     transition: transform 0.2s ease;
 }
 
-    /* Эффект "прыжка" счетчика при добавлении товара */
     .cart-badge.bump {
         transform: scale(1.4);
     }
 
-/* Строка товара внутри модального окна */
 .cart-item-row {
     display: flex;
     justify-content: space-between;
@@ -515,7 +493,6 @@ body {
     font-size: 14px;
 }
 
-/* Кнопка удаления товара */
 .remove-btn {
     background: none;
     border: none;
@@ -531,7 +508,6 @@ body {
         text-decoration: underline;
     }
 
-/* Красивое всплывающее уведомление (Toast) */
 .toast-notification {
     position: fixed;
     bottom: 20px;

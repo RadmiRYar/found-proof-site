@@ -1,19 +1,15 @@
 ﻿console.log("Скрипт сопряжения страниц загружен");
 
-// Загружаем сохраненную корзину или создаем пустую
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-// Как только страница загрузилась (неважно, главная это или cart.html)
 document.addEventListener('DOMContentLoaded', () => {
     updateCartBadge();
     
-    // Проверяем: если на текущей странице есть блок для товаров — отрисовываем их
     if (document.getElementById('cart-items')) {
         renderCartPage();
     }
 });
 
-// Функция обновления цифры на кнопке корзины (работает на всех страницах шоурума)
 function updateCartBadge() {
     const badge = document.getElementById('cart-badge');
     if (badge) {
@@ -21,7 +17,6 @@ function updateCartBadge() {
     }
 }
 
-// Добавление товара (вызывается по клику из каталога на главной)
 function addToCart(name, price) {
     cart.push({ name, price });
     localStorage.setItem('cart', JSON.stringify(cart));
@@ -30,7 +25,6 @@ function addToCart(name, price) {
     showToast(`🛍️ ${name} добавлен в корзину!`);
 }
 
-// Красивое всплывающее уведомление на главной странице
 function showToast(message) {
     const oldToast = document.querySelector('.toast-notification');
     if (oldToast) oldToast.remove();
@@ -48,7 +42,6 @@ function showToast(message) {
     }, 2500);
 }
 
-// Отрисовка элементов на отдельной странице cart.html
 function renderCartPage() {
     const list = document.getElementById('cart-items');
     const totalElement = document.getElementById('total-price');
@@ -78,16 +71,14 @@ function renderCartPage() {
     }
 }
 
-// Функция удаления товара (работает прямо на странице cart.html)
 function removeFromCart(index) {
-    cart.splice(index, 1); // Удаляем вещь из массива по индексу
-    localStorage.setItem('cart', JSON.stringify(cart)); // Сохраняем обновленный список
+    cart.splice(index, 1);
+    localStorage.setItem('cart', JSON.stringify(cart));
     
-    updateCartBadge(); // Обновляем счетчик в шапке страницы
-    renderCartPage();  // Моментально перерисовываем страницу корзины
+    updateCartBadge();
+    renderCartPage();
 }
 
-// Кнопка оплаты
 function checkout() {
     if (cart.length === 0) {
         alert("Нельзя оплатить пустую корзину!");
